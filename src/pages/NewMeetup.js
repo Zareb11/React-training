@@ -2,9 +2,24 @@ import NewMeetupForm from "../components/meetups/NewMeetupForm";
 
 
 function NewMeetupPage() {
+
+    function addMeetupHandler(meetupData) {
+        fetch(
+            'https://react-getting-started-c999e-default-rtdb.firebaseio.com/meetups.json',
+            {
+                method: 'POST',
+                body: JSON.stringify(meetupData),
+                headers: {
+                    'Content-Type':'application/json'
+                }
+            }
+            );
+    }
+
+
     return <section>
         <h1>Add new Meetup</h1>
-        <NewMeetupForm />
+        <NewMeetupForm onAddMeetup={addMeetupHandler}/>
     </section>
 }
 
