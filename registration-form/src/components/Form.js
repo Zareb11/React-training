@@ -1,5 +1,5 @@
 import React from 'react'
-import bgImg from '../assests/img1.jpg'
+import bgImg from '../assests/img2.jpg'
 
 
 export default function Form() {
